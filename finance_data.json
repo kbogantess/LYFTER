@@ -1,0 +1,22 @@
+{
+    "categories": [
+        "Carro",
+        "car",
+        "Ari",
+        "xd"
+    ],
+    "transactions": [
+        {
+            "type": "Income",
+            "title": "cd",
+            "amount": 1121212121.0,
+            "category": "xd"
+        },
+        {
+            "type": "Expense",
+            "title": "dm",
+            "amount": 3434232.0,
+            "category": "Ari"
+        }
+    ]
+}
