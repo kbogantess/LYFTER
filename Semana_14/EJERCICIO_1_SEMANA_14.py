@@ -1,7 +1,12 @@
+print("Semana 14. Ejercicio 1 - CAMBIOS SOLICITADOS")
+
 class Node:
-    def __init__(self, head, next=None):
-        self.head = head  
+    def __init__(self, data, next=None):
+        self.data = data  
         self.next = next  
+
+    def __str__(self):
+        return str(self.data)
 
 
 class Stack:
@@ -11,16 +16,15 @@ class Stack:
     def print_structure(self):
         current_node = self.head
         while current_node is not None:
-            print(current_node.head)  
+            print(current_node.data)  
             current_node = current_node.next
 
     def push(self, new_node):
-
         new_node.next = self.head
         self.head = new_node
 
     def pop(self):
-        if self.head is None:  # If it is empty
+        if self.head is None:  # Empty
             print("Stack is empty!")
             return None
         
@@ -28,49 +32,17 @@ class Stack:
         self.head = self.head.next  
         return popped_node  
 
-
-first_node = Node("first")
 my_stack = Stack()
-
-my_stack.push(first_node)
-
-second_node = Node("second")
-my_stack.push(second_node)
-
-third_node = Node("third")
-my_stack.push(third_node)
-
+my_stack.push(Node("first"))
+my_stack.push(Node("second"))
+my_stack.push(Node("third"))
 
 print("STACK:")
 my_stack.print_structure()
 
-
-print("\nPOP")
-popped = my_stack.pop()
-print(f"Deleted element: {popped.head}")
-my_stack.print_structure()
-
-print("\nPOP")
-popped = my_stack.pop()
-print(f"Deleted element: {popped.head}")
-my_stack.print_structure()
-
-print("\nPOP")
-popped = my_stack.pop()
-print(f"Deleted element: {popped.head}")
-my_stack.print_structure()
-
 print("\nPOP")
 popped = my_stack.pop()
 if popped:
-    print(f"Deleted element: {popped.head}")
+    print(f"Deleted element: {popped}")
+
 my_stack.print_structure()
-
-print("\nPOP")
-popped = my_stack.pop()
-if popped:
-    print(f"Deleted element: {popped.head}")
-my_stack.print_structure()
-
-
-
