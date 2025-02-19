@@ -1,0 +1,127 @@
+<!--
+
+Ejercicio de Forms
+
+Para este ejercicio, la solución debe utilizar solamente HTML.
+Puede reutilizar cualquier código visto en lecciones pasadas o en el ejercicio guiado.
+También puede reutilizar código encontrado en internet, mientras cumpla con los requisitos 
+y restricciones del resultado esperado.
+
+Enunciado:
+
+Usted es el encargado de crear un formulario para votar en las elecciones de su país.
+El formulario consistirá en una serie de campos de texto para capturar la información del 
+votante, y una sección con selección única para escoger a uno de los candidatos. Finalmente 
+<debe tener un botón para confirmar la selección del candidato.
+La información requerida es la siguiente:
+
+Nombre completo
+
+Correo
+
+Num. de Identificación
+
+Teléfono
+
+El formulario se usará en multiples elecciones, por lo que por ahora solamente utilice Candidato #N
+para los nombres de los candidatos.
+
+Ejemplo:
+Candidato #1
+
+Candidato #2
+
+Candidato #3
+
+Al presionar el botón de confirmar, haga que el formulario redirija a otra página web para asignarle una 
+acción temporal. Más adelante en el curso utilizaremos los botones correctamente.
+
+-->
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <form action="https://dummyjson.com/test" method="POST">
+
+
+
+    <h1>Elecciones 2025</h1>
+    <p>Complete la información necesaria para registrar el voto</p>
+
+
+
+    <label for="full_name">Full name</label>
+
+    <!-- The label element represents a caption in a user interface. 
+    The caption can be associated with a specific form control, known as 
+    the label element's labeled control, either using the for attribute, 
+    or by putting the form control inside the label element itself.-->
+
+    <br />
+
+    <input type="text" id="full_name" name="fullName" required/>
+    <br />
+
+    <!-- The input element represents a typed data field, usually with 
+    a form control to allow the user to edit the data.-->
+
+
+
+    <label for="email">Email</label>
+    <br />
+
+    <input type="text" id="email" name="email" required/>
+    <br />
+
+
+
+    <label for="identification">Identification</label>
+    <br />
+
+    <input type="text" id="identification" name="identification" required/>
+    <br />
+
+
+
+    <label for="phone">Teléfono</label>
+        <br />
+
+    <input type="tel" id="phone" name="phone" required /> 
+    <!-- el requiered impide que se pueda avanzar si no se ha llenado un campo-->
+    <br />
+
+
+
+    <h2>Seleccione su candidato</h2>
+
+
+
+    <input type="radio" id="candidato1" name="candidato" value="Candidato #1" required />
+
+    <label for="candidato1">Candidato #1</label>
+    <br />
+    
+
+
+    <input type="radio" id="candidato2" name="candidato" value="Candidato #2" />
+    <label for="candidato2">Candidato #2</label>
+    <br />
+
+
+    
+    <input type="radio" id="candidato3" name="candidato" value="Candidato #3" />
+    <label for="candidato3">Candidato #3</label>
+    <br />
+
+
+
+    <input type="submit" value="Confirmar voto" />
+    </form>
+
+</body>
+
+</html>
+
