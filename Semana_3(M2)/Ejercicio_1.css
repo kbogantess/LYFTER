@@ -1,0 +1,127 @@
+.screen-border {
+    border: 1em rgb(81, 81, 212) solid;
+    border-radius: 1em;
+    padding: 4em;
+    height: 40vh;
+    width: 33vw;
+}
+
+p {
+    font-size: 1rem;
+    color: rgb(69, 69, 73);
+}
+
+
+
+.first-name {
+    border-radius: 3em;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.first-name input {
+    color: #666; 
+    background-color: #f5f7fa; 
+    border: 1px solid #e0e4e8; 
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #f5f7fa;
+    box-sizing: border-box;
+}
+
+
+
+.last-name {
+    border-radius: 3em;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.last-name input {
+    color: #666; 
+    background-color: #f5f7fa; 
+    border: 1px solid #e0e4e8; 
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #f5f7fa; 
+    box-sizing: border-box;
+}
+
+
+
+.email{
+    border-radius: 3em;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.email input {
+    color: #666; 
+    background-color: #f5f7fa; 
+    border: 1px solid #e0e4e8; 
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #f5f7fa; 
+    box-sizing: border-box;
+}
+
+
+.email .icon {
+    position: absolute;
+    padding-left: 12em;
+    font-size: 1.2em;
+}
+
+
+
+
+.message-about {
+    border-radius: 3em;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    }
+
+.message-about select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e0e4e8;
+    background-color: #f5f7fa;
+    color: #666;
+    box-sizing: border-box;
+}
+
+.message {
+    border-radius: 3em;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.message textarea {
+    color: #666; 
+    background-color: #f5f7fa; 
+    border: 1px solid #e0e4e8; 
+    width: 100%;
+    padding: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 5px;
+    background-color: #f5f7fa; 
+    box-sizing: border-box;
+}
+
+
+
+.send-message input{
+    border-radius: none;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgb(81, 81, 212);
+    color: white;
+    border: none;
+}

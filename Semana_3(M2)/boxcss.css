@@ -1,0 +1,17 @@
+.cards-container {
+    display: block;
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
+  .card {
+
+    border-top: 2px dotted black;
+    border-right: 3px groove blue; 
+    border-left: 5px dashed red; 
+    border-bottom: 4px double green; 
+
+    margin: 1.5em;
+    padding: 1em;
+    background-color: lightgray;
+    border-radius: 20px;
+  }

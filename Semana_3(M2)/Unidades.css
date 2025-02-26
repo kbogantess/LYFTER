@@ -1,0 +1,11 @@
+.parent-element {
+    background-color: lightgreen;
+    width: 400px;
+}
+
+
+
+.child-element {
+    background-color: rgb(230, 44, 11);
+    width: 50%;
+}
