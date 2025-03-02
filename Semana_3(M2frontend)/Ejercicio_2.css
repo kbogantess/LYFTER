@@ -1,0 +1,94 @@
+.all{
+width:100%;
+height:100%;
+}
+
+
+.header-class{
+
+    text-align: center;
+
+}
+
+
+
+.Social-networks-image{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+}
+
+
+
+.choose-the-best{
+
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
+.by{
+    font-size: 0.5rem;
+    margin-top: -1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
+.first-image{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+}
+
+
+
+.first-paragraph{
+
+    
+    text-align: left; 
+    margin: 0 auto; 
+    font-size: 0.7rem;
+    margin-left: 37%;
+
+}
+
+
+
+
+.fifty-paragraph{
+
+    margin-left: 37%;
+    text-align: left;
+    font-size: 0.7rem;
+}
+
+
+.fifty-image {
+    
+    margin-left: 52%; 
+    margin-top: -7rem; 
+}
+
+
+
+.bottom-paragraph{
+
+    
+    margin: 1rem; 
+    font-size: 0.7rem;
+    margin-left: 37%;
+}
+
+
+.page-container{
+    align-items: center;
+    text-align: center;
+
+}

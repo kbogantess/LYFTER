@@ -1,9 +1,17 @@
+.all{
+
+width: 100%;
+height: 100%;
+}
+
 .screen-border {
     border: 1em rgb(81, 81, 212) solid;
     border-radius: 1em;
     padding: 4em;
     height: 40vh;
     width: 33vw;
+    padding-right: 0.5em;
+
 }
 
 p {
@@ -23,7 +31,7 @@ p {
     color: #666; 
     background-color: #f5f7fa; 
     border: 1px solid #e0e4e8; 
-    width: 100%;
+    width: 50%;
     padding: 0.5rem;
     border-radius: 5px;
     background-color: #f5f7fa;
@@ -42,7 +50,7 @@ p {
     color: #666; 
     background-color: #f5f7fa; 
     border: 1px solid #e0e4e8; 
-    width: 100%;
+    width: 50%;
     padding: 0.5rem;
     border-radius: 5px;
     background-color: #f5f7fa; 
@@ -64,20 +72,19 @@ p {
     color: #666; 
     background-color: #f5f7fa; 
     border: 1px solid #e0e4e8; 
-    width: 100%;
+    width: 50%;
     padding: 0.5rem;
     border-radius: 5px;
     background-color: #f5f7fa; 
     box-sizing: border-box;
 }
 
-
 .email .icon {
-    position: absolute;
-    padding-left: 12em;
+    margin: -12em;
+    padding-left: 10em;
     font-size: 1.2em;
+    pointer-events: none;
 }
-
 
 
 
@@ -88,7 +95,7 @@ p {
     }
 
 .message-about select {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #e0e4e8;
@@ -107,7 +114,7 @@ p {
     color: #666; 
     background-color: #f5f7fa; 
     border: 1px solid #e0e4e8; 
-    width: 100%;
+    width: 50%;
     padding: 0.5rem;
     padding-bottom: 0.5rem;
     border-radius: 5px;
@@ -125,3 +132,6 @@ p {
     color: white;
     border: none;
 }
+
+
+/*Comment de prueba...*/
