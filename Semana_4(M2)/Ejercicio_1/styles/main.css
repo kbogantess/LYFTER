@@ -1,0 +1,13 @@
+@import url(header.css);
+@import url(poster.css);
+@import url(catalog.css);
+@import url(footer.css);
+
+.maincontainer{
+    margin: 0 12% 0  12%;
+}
+
+h2{
+    margin-left:6%;
+
+}
