@@ -1,0 +1,35 @@
+.col-flex{
+
+    display: flex;
+    flex-direction: column;
+    
+    p{
+    background-color: lightpink;
+    margin: 0;
+    }
+
+}
+
+.row-flex{
+
+    display: flex;
+    flex-direction: row;
+    
+    p{
+    background-color: lightblue;
+    margin: 0;
+    }
+
+}
+
+
+.test-flex{
+
+    display: flex;
+    border: 1px solid black;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
