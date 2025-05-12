@@ -1,0 +1,50 @@
+<div>
+  <button id="add-button">Click me!</button>
+  <ul>
+    <li id="list">An item</li>
+  </ul>
+</div>
+
+<script>
+  const button = document.getElementById("add-button");
+
+  const addItem = () => {
+    const item = document.createElement("li");
+    item.innerHTML = "Another item";
+
+    const list = document.getElementById("list");
+    list.appendChild(item);
+  };
+
+  button.addEventListener("click", addItem);
+</script>
+
+<!--   
+
+<div>
+
+<button id="add-button">Click me!</button>
+
+<ol>
+  <li>Item</li>
+</ol>
+
+</div>
+
+<script>
+
+    const getElemendById("add-button");
+
+    const addItem = () => {
+        const item = document.createElement("li")
+        item.innerHTML = "Another Item";
+
+    const getElementById ("list");
+    list.appendChild(item);
+};
+
+button.addEventListenner("click", addItem);
+
+</script>
+
+-->
