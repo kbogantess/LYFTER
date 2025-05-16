@@ -1,0 +1,32 @@
+<!--Crea un documento HTML con un input de texto y un botón, 
+donde al presionar el botón se toman los datos y se muestran 
+en pantalla. Al presionar el botón también se limpia el input. 
+Si se agregan datos nuevos, se sustituyen los anteriores y se 
+repite el proceso-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Display Text</title>
+  </head>
+  <body>
+    <h2>Enter a message</h2>
+    <input type="text" id="text-input" placeholder="Type something here" />
+    <button id="show-button">Show</button>
+
+    <p id="output"></p>
+
+    <script>
+      const input = document.getElementById("text-input");
+      const button = document.getElementById("show-button");
+      const output = document.getElementById("output");
+
+      button.addEventListener("click", () => {
+        const text = input.value.trim();
+        output.textContent = text || "No text entered.";
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>

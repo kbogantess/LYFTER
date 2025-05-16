@@ -1,0 +1,35 @@
+<!--Crea un documento HTML con un botón que agregue elementos a una lista 
+ordenada, y otro que limpie todos los elementos de la lista. Realizalo agregando 
+el código JS dentro de un elemento script.-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>List</title>
+  </head>
+  <body>
+    <div>
+      <button id="add-button">Add Item</button>
+      <button id="clear-all-button">Clear List</button>
+      <ol id="list"></ol>
+    </div>
+
+    <script>
+      const addButton = document.getElementById("add-button");
+      const clearButton = document.getElementById("clear-all-button");
+
+      const list = document.getElementById("list");
+
+      addButton.addEventListener("click", () => {
+        const item = document.createElement("li");
+        item.textContent = "New Item";
+        list.appendChild(item);
+      });
+
+      clearButton.addEventListener("click", () => {
+        list.innerHTML = "";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!--Crea un form con inputs de correo, contraseña, nombre 
+y apellidos. También debe tener un radio button para 
+seleccionar si es empleado o no. Al seleccionar “sí”, 
+se debe mostrar un input extra para empleo. Si se 
+vuelve a seleccionar “no”, este input se debe esconder.-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee</title>
+
+    <!--CSS-->
+    <style>
+      #empleo-field {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="https://dummyjson.com/test" method="POST">
+      <h1>Employee Information</h1>
+      <p>Complete the fields</p>
+
+      <label for="full_name">Full Name</label><br />
+      <input type="text" id="full_name" name="fullName" required /><br />
+
+      <label for="email">Email</label><br />
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="identification">Identification</label><br />
+      <input
+        type="text"
+        id="identification"
+        name="identification"
+        required
+      /><br />
+
+      <label for="phone">Phone</label><br />
+      <input type="tel" id="phone" name="phone" required /><br />
+
+      <label for="password">Password</label><br />
+      <input type="password" id="password" name="password" required /><br />
+
+      <h2>Are you an employee?</h2>
+      <input type="radio" id="empleado_si" name="empleado" value="yes" />
+      <label for="empleado_si">Yes</label><br />
+
+      <input type="radio" id="empleado_no" name="empleado" value="no" checked />
+      <label for="empleado_no">No</label><br />
+
+      <div id="empleo-field">
+        <label for="empleo">Where?</label><br />
+        <input type="text" id="empleo" name="empleo" /><br />
+      </div>
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- JavaScript -->
+    <script>
+      const empleadoSi = document.getElementById("empleado_si");
+      const empleadoNo = document.getElementById("empleado_no");
+      const empleoField = document.getElementById("empleo-field");
+
+      empleadoSi.addEventListener("change", () => {
+        if (empleadoSi.checked) {
+          empleoField.style.display = "block";
+        }
+      });
+
+      empleadoNo.addEventListener("change", () => {
+        if (empleadoNo.checked) {
+          empleoField.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
