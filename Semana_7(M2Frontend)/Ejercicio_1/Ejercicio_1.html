@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Callback Check</title>
+  </head>
+  <body>
+    <script>
+      function checkNumber(num, evenCallback, oddCallback) {
+        if (num % 2 === 0) {
+          evenCallback();
+        } else {
+          oddCallback();
+        }
+      }
+
+      function showEven() {
+        alert("The number is even!");
+      }
+
+      function showOdd() {
+        alert("The number is odd!");
+      }
+
+      let input = prompt("Enter a number:");
+      let number = parseInt(input);
+
+      if (!isNaN(number)) {
+        checkNumber(number, showEven, showOdd);
+      } else {
+        alert("Please enter a valid number.");
+      }
+    </script>
+  </body>
+</html>
