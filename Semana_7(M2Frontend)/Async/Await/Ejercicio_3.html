@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Lookup</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #container {
+        max-width: 400px;
+        margin: auto;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input,
+      button {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 1rem;
+      }
+      #result {
+        margin-top: 15px;
+      }
+      .error {
+        color: red;
+      }
+      .success {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2>Find User by ID</h2>
+      <input
+        type="number"
+        id="userIdInput"
+        placeholder="Enter user ID (example: 2)"
+      />
+      <button onclick="fetchUser()">Search</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function fetchUser() {
+        const userId = document.getElementById("userIdInput").value;
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = "";
+
+        fetch(`https://reqres.in/api/users/${userId}`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("User not found.");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            const user = data.data;
+            resultDiv.innerHTML = `
+            <p class="success"><strong>Name:</strong> ${user.first_name} ${user.last_name}</p>
+            <p class="success"><strong>Email:</strong> ${user.email}</p>
+          `;
+          })
+          .catch((error) => {
+            resultDiv.innerHTML = `<p class="error">${error.message}</p>`;
+          });
+      }
+    </script>
+  </body>
+</html>
