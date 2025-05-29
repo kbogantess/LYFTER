@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pokémon with Promise.any</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      #pokemonResult {
+        margin-top: 20px;
+        font-size: 1.2rem;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Fetch First Available Pokémon</h2>
+    <button onclick="fetchFirstPokemon()">Load First Pokémon</button>
+    <div id="pokemonResult"></div>
+
+    <script>
+      function fetchFirstPokemon() {
+        const output = document.getElementById("pokemonResult");
+        output.innerHTML = "Loading...";
+
+        const ids = [4, -7, 4];
+
+        const promises = ids.map((id) =>
+          fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((response) => {
+            if (!response.ok) {
+              throw new Error(`Failed to fetch Pokémon with ID ${id}`);
+            }
+            return response.json();
+          })
+        );
+
+        Promise.any(promises)
+          .then((pokemon) => {
+            output.innerHTML = `<p>First Pokémon loaded: ${pokemon.name}</p>`;
+          })
+          .catch((error) => {
+            output.innerHTML = `<p class="error">Error: No Pokémon could be loaded.</p>`;
+          });
+      }
+    </script>
+  </body>
+</html>

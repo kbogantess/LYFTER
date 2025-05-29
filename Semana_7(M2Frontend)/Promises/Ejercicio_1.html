@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pokémon Fetch Example</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      #pokemonList {
+        margin-top: 20px;
+        font-size: 1.2rem;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Fetch 3 Pokémons</h2>
+    <button onclick="fetchPokemons()">Load Pokémons</button>
+    <div id="pokemonList"></div>
+
+    <script>
+      function fetchPokemons() {
+        const output = document.getElementById("pokemonList");
+        output.innerHTML = "Loading...";
+
+        const ids = [1, 2, 7];
+
+        const promises = ids.map((id) =>
+          fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((response) => {
+            if (!response.ok) {
+              throw new Error(`Failed to fetch Pokémon with ID ${id}`);
+            }
+            return response.json();
+          })
+        );
+
+        Promise.all(promises)
+          .then((pokemons) => {
+            const names = pokemons.map((pokemon) => pokemon.name);
+            output.innerHTML = `
+            <p>Pokémons loaded:</p>
+            <ul>
+              ${names.map((name) => `<li>${name}</li>`).join("")}
+            </ul>
+          `;
+          })
+          .catch((error) => {
+            output.innerHTML = `<p class="error">Error: ${error.message}</p>`;
+          });
+      }
+    </script>
+  </body>
+</html>

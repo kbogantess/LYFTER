@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assemble Sentence with Promises</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Assemble Sentence with Promises</h2>
+    <button onclick="assembleSentence()">Run</button>
+    <p id="output">Result here</p>
+
+    <script>
+      function delayedPromise(word, delay) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log(`Resolved: ${word}`);
+            resolve(word);
+          }, delay);
+        });
+      }
+
+      function assembleSentence() {
+        const output = document.getElementById("output");
+        output.textContent = "Loading...";
+
+        const promises = [
+          delayedPromise("very", 1500),
+          delayedPromise("dogs", 200),
+          delayedPromise("cute", 1000),
+          delayedPromise("are", 600),
+        ];
+
+        Promise.all(promises)
+          .then((words) => {
+            const sentence = [words[1], words[3], words[0], words[2]].join(" ");
+            output.textContent =
+              sentence.charAt(0).toUpperCase() + sentence.slice(1);
+          })
+          .catch(() => {
+            output.textContent = "Error assembling sentence.";
+          });
+      }
+    </script>
+  </body>
+</html>
