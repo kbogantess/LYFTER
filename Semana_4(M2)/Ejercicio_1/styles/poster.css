@@ -1,0 +1,79 @@
+/*poster.css*/
+
+.poster-contain{
+    display: flex;
+    background-color: rgb(240, 203, 209);
+    margin-top: 3%;
+    border-radius: 5px;
+    /*margin-right: 12%;
+    margin-left: 12%;*/
+    height: 18rem;
+}
+
+    .poster-image{
+        display:flex;
+        flex-direction: column;
+        height: 13rem;
+        padding-top: 2rem;
+    }
+
+    .poster-content{
+        width: 50%;
+        display: flex; 
+        flex-direction: column;
+        align-items: start; 
+        justify-content: center;
+        
+    }
+
+
+.veraniega1{
+        font-size: 1.5rem;
+        font-style: italic;
+        padding-left: 10%;
+        color: rgb(0, 0, 0);
+        margin-bottom: -1rem; 
+        margin-top: 10rem;
+    }
+    
+
+.veraniega2{
+        font-size: 1rem;
+        font-style: normal;
+        padding-left: 10%;
+        color: rgb(0, 0, 0);
+        margin-bottom: -1rem;
+        margin-top: 1rem;
+
+}
+
+.veraniega3{
+
+    font-size: 2rem;
+    font-style: normal;
+    padding-left: 10%;
+    color: rgb(10, 17, 10);
+    margin-bottom: -1rem;
+    margin-top: 1rem;
+}
+
+.button1{
+    margin-left: 10%;
+    margin-bottom: 30%;
+
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    width: 7rem;
+    height: 2rem;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+    }
+
+    .dolar {
+        color: rgb(0, 255, 34);
+        font-size: 2rem;
+        font-style: normal; 
+}
+

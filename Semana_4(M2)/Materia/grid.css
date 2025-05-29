@@ -1,0 +1,22 @@
+.test-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border:0.2rem solid blue;
+    gap: 10px;
+}
+
+.grid-item{
+    background-color: lightgreen;
+    grid-column: span 2; /*Replace*/
+}
+
+
+
+/*
+
+Si tenemos una tabla con muchas filas y columnas y queremos 
+ordenar de manera fija los elementos, podemos indicar en qué 
+celda comienzan y terminan utilizando la sintaxis grid-row: 
+<start-line> / <end-line>. Esto también aplica para grid-row.
+
+*/

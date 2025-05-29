@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="Ejercicio_1.css" rel="stylesheet" />
+    <title>Formulario de contacto</title>
+  </head>
+
+  <body>
+    <div class="screen-border">
+      <h1>Contact us!</h1>
+      <p>Got something to say? Fire away!</p>
+      <br />
+
+      <form action="https://dummyjson.com/test" method="POST">
+        <div class="first-name">
+          <input
+            type="text"
+            id="first_name"
+            placeholder="First Name*"
+            required
+          />
+          <br />
+        </div>
+
+        <div class="last-name">
+          <input type="text" id="last_name" placeholder="Last Name*" required />
+          <br />
+        </div>
+
+        <div class="email">
+          <input
+            type="email"
+            id="email"
+            placeholder="Email address*"
+            required
+          />
+          <span class="icon">📧</span>
+          <br />
+        </div>
+
+        <div class="message-about">
+          <select id="message-about" required>
+            <option value="" disabled selected>
+              What's your message about? *
+            </option>
+            <option value="Question">Question</option>
+            <option value="Suggestion">Suggestion</option>
+            <option value="Complaint">Complaint</option>
+          </select>
+        </div>
+
+        <div class="message">
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Fire away!*"
+          ></textarea>
+          <br />
+        </div>
+
+        <div class="send-message">
+          <input type="submit" value="Send my message" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+<!--#########################################################################################################################################-->
+
+<!-- Comment de prueba...-->
