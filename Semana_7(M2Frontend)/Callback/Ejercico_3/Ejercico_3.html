@@ -2,36 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Random Background Color</title>
+    <title>Callback Color Changer</title>
     <style>
-      #colorBox {
+      #color-box {
         padding: 20px;
-        margin-top: 20px;
-        border: 1px solid #ccc;
-        transition: background-color 0.3s;
+        margin-top: 10px;
+        color: white;
       }
     </style>
   </head>
   <body>
-    <h2>Change Paragraph Background</h2>
-
-    <button id="colorButton">Change Color</button>
-
-    <p id="colorBox">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-      Praesent libero. Sed cursus ante dapibus diam.
+    <button id="color-button">Cambiar color</button>
+    <p id="color-box">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
 
     <script>
-      const button = document.getElementById("colorButton");
-      const paragraph = document.getElementById("colorBox");
-
+      const button = document.getElementById("color-button");
+      const box = document.getElementById("color-box");
       const colors = ["red", "blue", "green", "yellow", "cyan", "pink"];
 
-      button.addEventListener("click", () => {
+      const changeColor = () => {
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        paragraph.style.backgroundColor = randomColor;
-      });
+        box.style.backgroundColor = randomColor;
+      };
+
+      button.addEventListener("click", changeColor);
     </script>
   </body>
 </html>

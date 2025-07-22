@@ -1,17 +1,15 @@
-fetch('https://reqres.in/api/users/23')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('User not found (status code: ' + response.status + ')');
+import fetch from 'node-fetch';
+
+async function ejercicio2() {
+    try {
+        const res = await fetch('https://reqres.in/api/usens/23'); // URL incorrecta
+        if (!res.ok) throw new Error("Usuario no se encontró");
+        const data = await res.json();
+        console.log("Ejercicio 2 - Usuario:");
+        console.log(data.data);
+    } catch (err) {
+        console.error("Ejercicio 2 - Error:", err.message);
     }
-    return response.json();
-  })
-  .then(data => {
-    const user = data.data;
-    console.log("User found:");
-    console.log("ID:", user.id);
-    console.log("Name:", user.first_name, user.last_name);
-    console.log("Email:", user.email);
-  })
-  .catch(error => {
-    console.error("Error:", error.message);
-  });
+}
+
+ejercicio2();

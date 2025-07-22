@@ -1,74 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <title>User Lookup</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-      }
-      #container {
-        max-width: 400px;
-        margin: auto;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      input,
-      button {
-        width: 100%;
-        margin: 10px 0;
-        padding: 10px;
-        font-size: 1rem;
-      }
-      #result {
-        margin-top: 15px;
-      }
-      .error {
-        color: red;
-      }
-      .success {
-        color: green;
-      }
-    </style>
+    <title>Ejercicio 3</title>
   </head>
   <body>
-    <div id="container">
-      <h2>Find User by ID</h2>
-      <input
-        type="number"
-        id="userIdInput"
-        placeholder="Enter user ID (example: 2)"
-      />
-      <button onclick="fetchUser()">Search</button>
-      <div id="result"></div>
-    </div>
+    <h3>Buscar usuario por ID</h3>
+    <input type="number" id="userId" placeholder="ID" />
+    <button onclick="buscarUsuario()">Buscar</button>
+    <p id="resultado"></p>
 
     <script>
-      function fetchUser() {
-        const userId = document.getElementById("userIdInput").value;
-        const resultDiv = document.getElementById("result");
-        resultDiv.innerHTML = "";
+      async function buscarUsuario() {
+        const id = document.getElementById("userId").value;
+        const resultado = document.getElementById("resultado");
 
-        fetch(`https://reqres.in/api/users/${userId}`)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("User not found.");
-            }
-            return response.json();
-          })
-          .then((data) => {
-            const user = data.data;
-            resultDiv.innerHTML = `
-            <p class="success"><strong>Name:</strong> ${user.first_name} ${user.last_name}</p>
-            <p class="success"><strong>Email:</strong> ${user.email}</p>
-          `;
-          })
-          .catch((error) => {
-            resultDiv.innerHTML = `<p class="error">${error.message}</p>`;
-          });
+        try {
+          const res = await fetch(`https://reqres.in/api/users/${id}`);
+          if (!res.ok) throw new Error("Usuario no se encontró");
+          const data = await res.json();
+          const user = data.data;
+          resultado.innerText = `Nombre: ${user.first_name} ${user.last_name}, Email: ${user.email}`;
+        } catch (err) {
+          resultado.innerText = err.message;
+        }
       }
     </script>
   </body>
