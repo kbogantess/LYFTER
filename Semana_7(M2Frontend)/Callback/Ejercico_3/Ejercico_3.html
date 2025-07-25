@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Callback Color Changer</title>
+    <style>
+      #color-box {
+        padding: 20px;
+        margin-top: 10px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="color-button">Cambiar color</button>
+    <p id="color-box">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+
+    <script>
+      const button = document.getElementById("color-button");
+      const box = document.getElementById("color-box");
+      const colors = ["red", "blue", "green", "yellow", "cyan", "pink"];
+
+      const changeColor = () => {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        box.style.backgroundColor = randomColor;
+      };
+
+      button.addEventListener("click", changeColor);
+    </script>
+  </body>
+</html>
