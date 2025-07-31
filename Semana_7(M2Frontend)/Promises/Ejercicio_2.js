@@ -1,17 +1,14 @@
-import fetch from 'node-fetch';
+const ids = [1, 4, 7];
 
-function ejercicio2() {
-    const ids = [1, 4, 7];
-    const requests = ids.map(id =>
-        fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => res.json())
-    );
+const fetchPokemon = (id) =>
+  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then(res => res.json());
 
-    Promise.any(requests)
-        .then(result => {
-            console.log("Ejercicio 2 - Promises:");
-            console.log("Primer Pokémon resuelto:", result.name);
-        })
-        .catch(err => console.error("Error en ejercicio 2:", err.message));
-}
-
-ejercicio2();
+Promise.any(ids.map(fetchPokemon))
+  .then(poke => {
+    console.log(`First resolved Pokémon: ${poke.name}`);
+  })
+  .catch(error => {
+    console.error("All promises failed:", error);
+  });
+q
