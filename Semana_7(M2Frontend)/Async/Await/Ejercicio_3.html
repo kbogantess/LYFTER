@@ -1,29 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Ejercicio 3</title>
+    <meta charset="UTF-8" />
+    <title>Find User</title>
   </head>
   <body>
-    <h3>Buscar usuario por ID</h3>
-    <input type="number" id="userId" placeholder="ID" />
-    <button onclick="buscarUsuario()">Buscar</button>
-    <p id="resultado"></p>
+    <h2>Find user by ID</h2>
+    <input type="number" id="userIdInput" placeholder="Enter user ID" />
+    <button id="searchBtn">Search</button>
+    <div id="result"></div>
 
     <script>
-      async function buscarUsuario() {
-        const id = document.getElementById("userId").value;
-        const resultado = document.getElementById("resultado");
+      const input = document.getElementById("userIdInput");
+      const button = document.getElementById("searchBtn");
+      const result = document.getElementById("result");
+
+      button.addEventListener("click", async () => {
+        const userId = input.value.trim();
+
+        if (!userId) {
+          result.textContent = "Please enter a valid ID.";
+          return;
+        }
 
         try {
-          const res = await fetch(`https://reqres.in/api/users/${id}`);
-          if (!res.ok) throw new Error("Usuario no se encontró");
-          const data = await res.json();
+          const response = await fetch(`https://reqres.in/api/users/${userId}`);
+
+          if (!response.ok) {
+            throw new Error("User not found.");
+          }
+
+          const data = await response.json();
           const user = data.data;
-          resultado.innerText = `Nombre: ${user.first_name} ${user.last_name}, Email: ${user.email}`;
-        } catch (err) {
-          resultado.innerText = err.message;
+
+          result.innerHTML = `
+          <p><strong>First name:</strong> ${user.first_name}</p>
+          <p><strong>Last name:</strong> ${user.last_name}</p>
+          <p><strong>Email:</strong> ${user.email}</p>
+        `;
+        } catch (error) {
+          result.innerHTML = `<p style="color:red;">${error.message}</p>`;
         }
-      }
+      });
     </script>
   </body>
 </html>

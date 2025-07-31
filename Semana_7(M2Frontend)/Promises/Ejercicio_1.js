@@ -1,12 +1,15 @@
-async function getUser() {
-    try {
-    const response = await fetch('https://reqres.in/api/users/2');
-    const data = await response.json();
-    console.log("User found successfully:");
-    console.log(data.data);
-    } catch (error) {
-    console.error("Error obtainig the user", error);
-    }
-}
+const ids = [1, 4, 7]; 
 
-getUser();
+const fetchPokemon = (id) =>
+  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then(res => res.json());
+
+Promise.all(ids.map(fetchPokemon))
+  .then(pokemons => {
+    pokemons.forEach(poke => {
+      console.log(`Pokémon: ${poke.name}`);
+    });
+  })
+  .catch(error => {
+    console.error("Something went wrong:", error);
+  });
