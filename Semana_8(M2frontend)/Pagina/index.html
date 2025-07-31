@@ -6,6 +6,7 @@
     <title>User Management</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="container" id="register">
       <h2>Register</h2>
@@ -34,5 +35,33 @@
       <div id="profileData"></div>
       <button id="logout">Log Out</button>
     </div>
+
+    <div class="container hidden" id="change">
+      <h2>Change Password</h2>
+      <form id="changeForm">
+        <input
+          type="password"
+          id="oldPassword"
+          placeholder="Current Password"
+          required
+        />
+        <input
+          type="password"
+          id="newPassword"
+          placeholder="New Password"
+          required
+        />
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="Confirm Password"
+          required
+        />
+        <button type="submit">Update</button>
+      </form>
+      <p id="changeMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
