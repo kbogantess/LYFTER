@@ -114,3 +114,33 @@ UPDATE receipts SET buyer_phone = '8888-2222', cashier_employee_code = 'EMP010' 
 UPDATE receipts SET buyer_phone = '8888-3333', cashier_employee_code = 'EMP011' WHERE ID = 3;
 UPDATE receipts SET buyer_phone = '8888-4444', cashier_employee_code = 'EMP100' WHERE ID = 4;
 UPDATE receipts SET buyer_phone = '8888-5555', cashier_employee_code = 'EMP101' WHERE ID = 5;*/
+
+
+
+- SELECTS pedidos------------------------------------------------------------
+ 
+--- 1.Obtenga todos los productos almacenados
+SELECT * FROM Products;
+ 
+--- 2.Obtenga todos los productos que tengan un precio mayor a 50000
+SELECT * FROM Products WHERE Price > 50000;
+ 
+--- 3.Obtenga todas las compras de un mismo producto por id
+SELECT * FROM receipt_products WHERE product_id = 2;
+ 
+--- 4.Obtenga todas las compras agrupadas por producto, con el total comprado entre todas las compras
+SELECT
+    product_id,
+    SUM(quantity) AS total_quantity,
+    SUM(amount) AS total_amount
+FROM receipt_products
+GROUP BY product_id;
+ 
+--- 5.Obtenga todas las facturas realizadas por el mismo comprador
+SELECT * FROM receipts WHERE email = 'A@gmail.com';
+ 
+--- 6.Obtenga todas las facturas ordenadas por monto total de forma descendente
+SELECT * FROM receipts ORDER BY total_amount DESC;
+ 
+---Obtenga una sola factura por número de factura
+SELECT * FROM receipts WHERE receipt_number = '0001';
