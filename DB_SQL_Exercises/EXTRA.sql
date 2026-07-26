@@ -41,4 +41,4 @@ CREATE TABLE categories (
 
 ---Disminuya stock_available en 1 para un product_id específico
 
----Verifique con SELECT * FROM products ORDER BY id ASC LIMIT 10
+---Verifique con SELECT * FROM products ORDER BY id ASC LIMIT 10---
