@@ -85,6 +85,6 @@ UPDATE products SET price = price + 100 WHERE stock_available < 10;
 
 UPDATE products SET stock_available = stock_available - 1 WHERE id = 1;
 
----Verifique con SELECT * FROM products ORDER BY id ASC LIMIT 10---
+----Verifique con SELECT * FROM products ORDER BY id ASC LIMIT 10---
 
 SELECT * FROM products ORDER BY id ASC LIMIT 10;
